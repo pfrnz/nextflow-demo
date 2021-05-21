@@ -1,1 +1,1 @@
-time nextflow run ex1/split.nf -with-docker nextflow/examples:latest
+time ./nextflow run ex1/split.nf -with-docker nextflow/examples:latest

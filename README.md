@@ -33,3 +33,20 @@ In order for pythonFile to run we have to map the folder with source files into 
 
 The folder has a simple include module 'foo' that demonstrates that we can bring in a whole source code tree. 
 
+
+# Running on MacOS
+The install instructions given do work 
+
+        curl -s https://get.nextflow.io | bash
+
+but I encountered a problem with finding JAVA as the script looks for java using JAVA_CMD and then various paths.  It tries to run java_home  but this fails because it returns a path containing a space ‘/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home’ then then fails to exec. 
+
+I commented out lines 305/306 so that `which java` gets used instead.
+Then chmod +x nextflow and mv it to /usr/local/bin 
+
+
+# Running on Powerplant
+Powerplant nodes have the required version of Java installed so along with the copy of nextflow in the repository you can run examples out of the box. 
+However for some reason they seem to run very slowly - i.e. 4m49s for the ex2 example which implies each process is running in sequence rather than in parallel.
+
+This is confirmed by the docker version which appears to start only one container. 

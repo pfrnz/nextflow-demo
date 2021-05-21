@@ -1,2 +1,1 @@
-# time nextflow run ex2-python/showPython.nf -with-docker scipy/scipy-dev
-nextflow run ex2-python/showPython.nf 
+time ./nextflow run ./ex2-python/showPython.nf 
